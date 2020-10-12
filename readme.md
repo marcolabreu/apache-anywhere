@@ -36,13 +36,13 @@ With ``apache-anywhere/bin`` somwhere on the path:
 
 	apache                              // starts apache httpd in the current directory at port 8686
 
+    apache stop 8686                    // stop the apache instance running on port 8686
+
     apache -p 8123                      // at current directory on port 8123
 
     apache -d /tmp                      // sets root docs directory to /tmp
 
     apache -d /home/user42 -p 8456      // set everything
-
-    apache stop 8686                    // stop the apache instance running on port 8686
 
 
 If you're running apache as a regular user then the port number needs to be above 8000 as below that ports
