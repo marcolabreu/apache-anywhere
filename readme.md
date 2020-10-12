@@ -21,7 +21,7 @@ It's like Apache, but Anywhere.
 -   Clone this repository to your local machine:
 
     ```
-	git clone https://github.com/julianbrowne/apache-anywhere.git
+	git clone https://github.com/marcolabreu/apache-anywhere.git
     ```
 
 -   Apache must already be installed
@@ -40,7 +40,10 @@ With ``apache-anywhere/bin`` somwhere on the path:
 
     apache -d /tmp                      // sets root docs directory to /tmp
 
-    apache -d /home/user42 -p 8456      // you get the idea
+    apache -d /home/user42 -p 8456      // set everything
+
+    apache stop 8686                    // stop the apache instance running on port 8686
+
 
 If you're running apache as a regular user then the port number needs to be above 8000 as below that ports
 are reserved for system processes. Also ensure that whichever user you are logged in as has appropriate access to the files in the documents directory.
