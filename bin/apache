@@ -1,11 +1,17 @@
 #!/bin/bash
 
-APACHE=/usr/sbin/httpd
-HTTP_PORT_DEFAULT=8686
-
 ROOT="`cd $(dirname $0) && pwd`/.."
-HTTP_CNF=${ROOT}/config/httpd.conf
+HTTP_PORT_DEFAULT=8686
 TEMP_LOG=/tmp/apache-anywhere/$$
+
+if [ -s $(brew --prefix)/bin/httpd ]
+then APACHE=$(brew --prefix)/bin/httpd \
+     HTTP_CNF=${ROOT}/config/brew.httpd.conf
+else
+    APACHE=/usr/sbin/httpd \
+    HTTP_CNF=${ROOT}/config/default.httpd.conf
+fi
+
 apache="$(tput setaf 5)apache :$(tput sgr0)"
 
 usage() {
